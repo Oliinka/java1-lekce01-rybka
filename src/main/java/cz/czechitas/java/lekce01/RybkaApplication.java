@@ -35,10 +35,15 @@ public class RybkaApplication extends CzechitasGameApplication {
     kamen = new Kamen(200, 200);
     rybka = new Rybka(100, 100);
 
-    rybka.plavatVpravo();
-    rybka.plavatDolu();
-    rybka.plavatVlevo();
-    rybka.plavatNahoru();
-
+    // Move the fish around the stone using a loop
+    moveRybkaMultipleTimes(rybka, 20, () -> rybka.plavatVpravo());
+    moveRybkaMultipleTimes(rybka, 20, () -> rybka.plavatDolu());
+    moveRybkaMultipleTimes(rybka, 20, () -> rybka.plavatVlevo());
+    moveRybkaMultipleTimes(rybka, 20, () -> rybka.plavatNahoru());
   }
-}
+    private void moveRybkaMultipleTimes(Rybka rybka, int times, Runnable movementMethod) {
+      for (int i = 0; i < times; i++) {
+        movementMethod.run();
+      }
+    }
+  }
