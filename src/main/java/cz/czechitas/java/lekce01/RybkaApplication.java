@@ -45,5 +45,8 @@ public class RybkaApplication extends CzechitasGameApplication {
       for (int i = 0; i < times; i++) {
         movementMethod.run();
       }
+
     }
+
   }
+
